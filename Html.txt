@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+</head>
+<body>
+
+       <!-- Container Title -->
+     <div class="title mx-2">
+        <h2 id="title">${title.getData()}</h2>
+        
+        <!-- Container Leaf -->
+        <div class="icon-leaf mb-2">
+            <span class="line mx-1 d-inline-block "></span>
+            <i class="fa-solid fa-seedling" id="icon-leaf"></i>      
+            <span class="line d-inline-block "></span>
+        </div>
+        
+        <!-- Container Paragraph -->
+        <div class="text-title mb-4">
+            <p>${title.textTitle.getData()}</p>
+        </div>
+    </div>
+
+
+ <!-- Container  Slide Buttons -->
+  <div class="slide d-flex ">
+    <#list button.getSiblings() as cur_button>
+        ${cur_button.getData()}
+        <div class=" gallery-icon my-2 mx-1">
+            <div class="container-icon">
+                <button class="button-icon d-flex text-center align-items-center">
+                    <span class="icon pt-3">${cur_button.icon.getData()}</span> 
+                    <span class="icon-name">${cur_button.textIcon.getData()}</span>
+                </button>
+            </div>
+        </div>
+    </#list>
+</div>
+
+
+
+</body>
+</html>
